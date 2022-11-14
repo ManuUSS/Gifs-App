@@ -23,6 +23,7 @@ export class GifsService {
 
     if ( localStorage.getItem('history') ) {
       this._history = JSON.parse( localStorage.getItem('history')! );
+      this.gifsResponse = JSON.parse( localStorage.getItem('gifsResponse')! );
     }
 
   }
@@ -42,9 +43,9 @@ export class GifsService {
     this.http.get<GifsResponse>(`https://api.giphy.com/v1/gifs/search?api_key=${ this._apiKey }&q=${ query }&limit=10`)
       .subscribe( ( { data } ) => {
         this.gifsResponse = data;
+        localStorage.setItem( 'gifsResponse', JSON.stringify( this.gifsResponse ) );
       }
     );
-
 
   }
 
