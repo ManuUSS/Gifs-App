@@ -12,5 +12,9 @@ export class SidebarComponent {
   get history() {
     return this.gifsService.history;
   }
+
+  public searchGif = ( query:string ) => {
+    this.gifsService.searchGifs( query );
+  }
   
 }
