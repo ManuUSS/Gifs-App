@@ -2,10 +2,11 @@
     <h3>Gifs App</h3>
     <hr/>
     <div class="list-group list-reset">
-      <a href="#"
+      <a *ngFor="let search of history" 
+        href="#"
         class="list-group-item list-group-item-action bg-dark text-light"
       >
-        Dashboard
+        {{ search | titlecase }} 
       </a>
     </div>
   </div>
