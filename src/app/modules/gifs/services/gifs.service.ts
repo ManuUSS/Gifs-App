@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class GifsService {
   
+  private _apiKey: string = '4HT5jVebpAgV3XuqxzYxA56q25dTD1bd';
+
   constructor() { }
 
   private _history: string[] = [];
@@ -23,7 +25,7 @@ export class GifsService {
     }
 
     this._history = this._history.splice( 0, 10 );
-    
+
   }
 
 }
